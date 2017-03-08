@@ -23,52 +23,52 @@ var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.l
 // Note to self  See codeschool slides for js3 course for these functions and syntax
 
 var updateGuessesLeft = function() {
-  // how guessesLeft will be displayed in html
-  document.querySelector("#guessLeft").innerHTML = "Guesses Left: " + guessesLeft;
+    // how guessesLeft will be displayed in html
+    document.querySelector("#guessLeft").innerHTML = "Guesses Left: " + guessesLeft;
 };
 
 var updateLetterToGuess = function() {
-  this.letterToGuess = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
+    this.letterToGuess = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
 };
 var updateGuessesSoFar = function() {
-  // This is guesses the user has tried, displayed as letters in box in html. 
-  document.querySelector("#pick").innerHTML = "Your Guesses So Far: " + guessedLetters.join(', ');
+    // This is guesses the user has tried, displayed as letters in box in html. 
+    document.querySelector("#pick").innerHTML = "Your Guesses So Far: " + guessedLetters.join(', ');
 };
 // Function will be called upon reset. "Update DOM" -See also http://stackoverflow.com/questions/12022552/how-do-i-tell-javascript-to-immediately-update-the-dom
 var reset = function() {
-  totalGuesses = 10;
-  guessesLeft = 10;
-  guessedLetters = [];
+    totalGuesses = 10;
+    guessesLeft = 10;
+    guessedLetters = [];
 
-  updateLetterToGuess();
-  updateGuessesLeft();
-  updateGuessesSoFar();
+    updateLetterToGuess();
+    updateGuessesLeft();
+    updateGuessesSoFar();
 }
 
 //When key is released it registers the user's guess
 document.onkeyup = function(event) {
     guessesLeft--;
-  var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-  // var userGuess=computerChoices;
+    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+    // var userGuess=computerChoices;
 
 
-  guessedLetters.push(userGuess);
-  updateGuessesLeft();
-  updateGuessesSoFar();
+    guessedLetters.push(userGuess);
+    updateGuessesLeft();
+    updateGuessesSoFar();
 
-        if (guessesLeft > 0){
-            if (userGuess == letterToGuess){
-                wins++;
-                document.querySelector('#wins').innerHTML = "Wins: " + wins;
-                alert("Good job! Yes, you might be psychic!");
-                reset();
-            }
-        }else if(guessesLeft == 0){
-            // if user doesn't guess any correctly, this will update the html and tell user s/he lost.
-            losses++;
-            document.querySelector('#losses').innerHTML = "Losses: " + losses;
-            alert("Sorry, none right! You are probably not psychic, maybe try again?");
-            // Then we'll call the reset. 
+    if (guessesLeft > 0) {
+        if (userGuess == letterToGuess) {
+            wins++;
+            document.querySelector('#wins').innerHTML = "Wins: " + wins;
+            alert("Good job! Yes, you might be psychic!");
             reset();
         }
+    } else if (guessesLeft == 0) {
+        // if user doesn't guess any correctly, this will update the html and tell user s/he lost.
+        losses++;
+        document.querySelector('#losses').innerHTML = "Losses: " + losses;
+        alert("Sorry, none right! You are probably not psychic, maybe try again?");
+        // Then we'll call the reset. 
+        reset();
+    }
 };

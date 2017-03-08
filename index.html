@@ -1,23 +1,71 @@
-<!-- Psychic Game using Zener symbols -->
-
+<!-- Psychic Game -->
+<!-- Note:  update this project for the future using the button method, using zener cards vs. alphabet, like we did for the class example on Monday, March 6!!!!!!!!!!!!!! -->
 <!DOCTYPE html>
-<html>
-	<html lang="en-us">
+<html lang="en">
 
 <head>
-	<meta name=“viewport” content=“width=device-width, initial-scale=1”> 
-	<meta charset="utf-8">
-	<title>Psychic Game</title>
-	<link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+    <meta charset="UTF-8">
+    <!-- NOte to self: Use this for viewing on different devices! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Psychic Game</title>
+    <!-- Added a link to latest compiled and minified Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+
 <body>
-
-
-
-
-<!-- Links to game.js file -->
-<script type="text/javascript" src="assets/javascript/game.js"></script>
+    <div class="container">
+        <div class="col-md-3 text-center">
+        </div>
+        <div class="col-md-6 text-center">
+            <header>
+                <h1>The Psychic Game</h1>
+            </header>
+            <div class="instructions">
+                <h2>Are you Psychic?</h2>
+                <h3>Guess What Letter I Am Thinking Of. . . . Start typing any letter from A - Z to begin!</h3>
+                <br>
+                <br>
+                <br>
+            </div>
+            <!-- Area designated for score and updates to "guesses" and "guesses left". -->
+            <div class="col-md-6">
+                <div id="game">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <p id="wins">Wins: </p>
+                        </li>
+                        <br>
+                        <li class="list-group-item">
+                            <p id="losses">Losses: </p>
+                        </li>
+                        <br>
+                        <li class="list-group-item">
+                            <p id="guessLeft">Guesses Left:</p>
+                        </li>
+                        <br>
+                        <li class="list-group-item">
+                            <p id="pick">Your Guesses So Far:</p>
+                        </li>
+                        <br>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="col-md-12">
+        <div class="footer push">
+            <footer class="footer text-center">
+                <div id="foot-wrapper">
+                    <p> &copy; 2017 Jeanmarie Martinko</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
+
 </html>
